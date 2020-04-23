@@ -110,7 +110,7 @@ TEST(PracticeTest, is_negative_sotring)
 	ASSERT_EQ(c, -1);
 }
 
-TEST(PracticeTest, is_negative_sotring)
+TEST(PracticeTest, is_more_negative_sotring)
 {
 	int a = 0, b = -1000, c = 1000;
 
