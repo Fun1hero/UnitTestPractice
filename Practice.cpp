@@ -32,23 +32,33 @@ void Practice::sortDescending(int & first, int & second, int & third)
 // character in the string, but disregarding case ('x' is the same as 'X')
 bool Practice::isPalindrome(string input)
 {
-  unsigned int size = input.size();
-  if (size != 0){
-    if (input[0] == ' ') size--;
-    if (input[input.size()-1] == ' ') size--;
-
-  }
-  for(int i=0; i < size; i++)
-  {
-    if( input[i] < 'A' || input[i] > 'Z' )
-    {
-      //change lower case to upper case
-      input[i] = input[i] - ('a' - 'A');
+  // unsigned int size = input.size();
+  bool hasLeadingOrTrailingSpace = false;
+  if (input[0] == ' ' || input[input.size()-1] == ' ') 
+    hasLeadingOrTrailingSpace = true;
+  string trimmed = input;
+  if (trimmed.size() != 0){
+    while(hasLeadingOrTrailingSpace){
+      if (trimmed[0] == ' '){
+        trimmed = trimmed.substr (1,trimmed.size()-1); 
+      } else if (trimmed[trimmed.size()-1] == ' '){
+        trimmed = trimmed.substr (0,trimmed.size()-2);
+      } else {
+        hasLeadingOrTrailingSpace = false;
+      }
     }
   }
-  for(int i=0; i < size/2; i++)
+  for(int i=0; i < trimmed.size(); i++)
   {
-    if( input[i] != input[size-1-i] )
+    if( trimmed[i] < 'A' || trimmed[i] > 'Z' )
+    {
+      //change lower case to upper case
+      trimmed[i] = trimmed[i] - ('a' - 'A');
+    }
+  }
+  for(int i=0; i < trimmed.size()/2; i++)
+  {
+    if( input[i] != trimmed[trimmed.size()-1-i] )
       return false;
   }
   return true;
