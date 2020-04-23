@@ -79,7 +79,8 @@ TEST(PracticeTest, is_sorted_descending)
 	int a = 2, b = 6, c = 9;
 
     Practice obj;
-    bool actual = obj.sortDescending(a, b, c);
+    obj.sortDescending(a, b, c);
+	
 	ASSERT_EQ(a, 9);
 	ASSERT_EQ(b, 6);
 	ASSERT_EQ(c, 2);
@@ -90,7 +91,8 @@ TEST(PracticeTest, is_sorted_not_changed_descending)
 	int a = 9, b = 6, c = 1;
 
     Practice obj;
-    bool actual = obj.sortDescending(a, b, c);
+	obj.sortDescending(a, b, c);
+	
 	ASSERT_EQ(a, 9);
 	ASSERT_EQ(b, 6);
 	ASSERT_EQ(c, 1);
