@@ -62,7 +62,7 @@ bool Practice::isPalindrome(string input)
   }
   for(unsigned i=0; i < trimmed.size()/2; i++)
   {
-    if( input[i] != trimmed[trimmed.size()-1-i] )
+    if( trimmed[i] != trimmed[trimmed.size()-1-i] )
       return false;
   }
   return true;
