@@ -47,7 +47,7 @@ TEST(PracticeTest, is_special_char_palindrome)
 TEST(PracticeTest, is_more_special_char_palindrome)
 {
     Practice obj;
-    bool actual = obj.isPalindrome(" ++a-&-a++ ");
+    bool actual = obj.isPalindrome(" ++a-7-a++ ");
     ASSERT_TRUE(actual);
 }
 
@@ -58,14 +58,14 @@ TEST(PracticeTest, is_more_special_char_falty_palindrome)
     ASSERT_FALSE(actual);
 }
 
-TEST(PracticeTest, is_extra_space_v1_palindrome)
+TEST(PracticeTest, is_extra_leading_space_palindrome)
 {
     Practice obj;
     bool actual = obj.isPalindrome(" a");
     ASSERT_TRUE(actual);
 }
 
-TEST(PracticeTest, is_extra_space_v2_palindrome)
+TEST(PracticeTest, is_extra_trailing_space_palindrome)
 {
     Practice obj;
     bool actual = obj.isPalindrome("a ");
