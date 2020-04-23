@@ -97,3 +97,27 @@ TEST(PracticeTest, is_sorted_not_changed_descending)
 	ASSERT_EQ(b, 6);
 	ASSERT_EQ(c, 1);
 }
+
+TEST(PracticeTest, is_negative_sotring)
+{
+	int a = 1, b = -1, c = 1;
+
+    Practice obj;
+	obj.sortDescending(a, b, c);
+	
+	ASSERT_EQ(a, 1);
+	ASSERT_EQ(b, 1);
+	ASSERT_EQ(c, -1);
+}
+
+TEST(PracticeTest, is_negative_sotring)
+{
+	int a = 0, b = -1000, c = 1000;
+
+    Practice obj;
+	obj.sortDescending(a, b, c);
+	
+	ASSERT_EQ(a, 1000);
+	ASSERT_EQ(b, 0);
+	ASSERT_EQ(c, -1000);
+}
