@@ -39,17 +39,20 @@ bool Practice::isPalindrome(string input)
   string trimmed = input;
   if (trimmed.size() != 0 && hasLeadingOrTrailingSpace){
     while(hasLeadingOrTrailingSpace){
-      if (trimmed[0] == ' '){
-        trimmed = trimmed.substr (1,trimmed.size()-1); 
-      } else if (trimmed[trimmed.size()-1] == ' '){
-        trimmed = trimmed.substr (0,trimmed.size()-2);
+      if ((trimmed[0] == ' ') || (trimmed[trimmed.size()-1] == ' ')){
+        if (trimmed[0] == ' '){
+          trimmed = trimmed.substr (1,trimmed.size()-1); 
+        } 
+        if (trimmed[trimmed.size()-1] == ' '){
+          trimmed = trimmed.substr (0,trimmed.size()-2);
+        } 
       } else {
         hasLeadingOrTrailingSpace = false;
       }
     }
   }
 
-  for(int i=0; i < trimmed.size(); i++)
+  for(unsigned i=0; i < trimmed.size(); i++)
   {
     if( trimmed[i] < 'A' || trimmed[i] > 'Z' )
     {
@@ -57,7 +60,7 @@ bool Practice::isPalindrome(string input)
       trimmed[i] = trimmed[i] - ('a' - 'A');
     }
   }
-  for(int i=0; i < trimmed.size()/2; i++)
+  for(unsigned i=0; i < trimmed.size()/2; i++)
   {
     if( input[i] != trimmed[trimmed.size()-1-i] )
       return false;
