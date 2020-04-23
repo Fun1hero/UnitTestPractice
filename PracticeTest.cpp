@@ -47,7 +47,7 @@ TEST(PracticeTest, is_special_char_palindrome)
 TEST(PracticeTest, is_more_special_char_palindrome)
 {
     Practice obj;
-    bool actual = obj.isPalindrome(" ++a--a++ ");
+    bool actual = obj.isPalindrome(" -$5$$5$-  ");
     ASSERT_TRUE(actual);
 }
 
